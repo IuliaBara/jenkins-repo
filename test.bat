@@ -1,2 +1,2 @@
-echo "This is a message from a batch file"
+echo "This is a message from a batch file updated in Intellij"
 echo %WORKSPACE%
