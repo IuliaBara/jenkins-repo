@@ -1,0 +1,16 @@
+node ('built-in'){
+  stage ('clone from repository'){
+      checkout scm 
+  }
+  
+  stage('Shw env vars'){
+    bat "echo %WORKSPACE%"
+  }
+  
+  stage('execute script'){
+    bat './test.bat'
+  }
+  stage('Cleanup Workspace'){
+  cleanWs deleteDirs: true
+  }
+}
