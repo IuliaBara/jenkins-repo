@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Execute bat'){
             steps{
-                bat ls
+                bat 'ls -1'
                 bat 'chmod + x test.bat'
                 bat './test.bat'
                 
