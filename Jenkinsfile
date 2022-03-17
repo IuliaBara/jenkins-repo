@@ -6,24 +6,28 @@ pipeline {
     agent any
     stages {
         
-        stage('Clean Workspace'){
-            steps{
-                cleanWs()
-            }
-        }
+       
         stage('Build') {
             steps {
                 bat 'echo %Branch%' 
                   }
         }
-        stage('Test'){
+        stage('Execute bat'){
             steps{
-                echo "Testing stage"
+                bat 'ls'
+                bat 'chmod + x test.bat'
+                bat './test.bat'
+                
             }
         }
         stage ('Deploy'){
             steps {
                 echo "Deploying stage"
+            }
+        }
+        stage('Clean Workspace'){
+            steps{
+                cleanWs()
             }
         }
     }
