@@ -3,12 +3,12 @@ node ('built-in'){
       checkout scm 
   }
   
-  stage('Shw env vars'){
+  stage('Show env vars'){
     bat "echo %WORKSPACE%"
   }
   
   stage('execute script'){
-    bat './test.bat'
+    echo 'this is execution step'
   }
   stage('Cleanup Workspace'){
   cleanWs deleteDirs: true
